@@ -50,7 +50,6 @@ def generate_resume_details (data):
 def generate_cover_letter_new(job_description,resume):
   # job_description_result = generate_job_description(job_description)
   # resume_result   = generate_resume_details(resume)
-  print("heloooooooooo",resume)
   return """Tejaswee Kumar Singh
 /githubtejas122125 | /linkedin-intejaswee-singh
 /envel⌢petejasweekumarsingh@gmail.com | ♂phone+91 7205147088 | ♂¶ap-pinRourkela, India
