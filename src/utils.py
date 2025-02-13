@@ -48,57 +48,57 @@ def generate_resume_details (data):
   return response
 
 def generate_cover_letter_new(job_description,resume):
-  # job_description_result = generate_job_description(job_description)
-  # resume_result   = generate_resume_details(resume)
-  return """Tejaswee Kumar Singh
-/githubtejas122125 | /linkedin-intejaswee-singh
-/envel⌢petejasweekumarsingh@gmail.com | ♂phone+91 7205147088 | ♂¶ap-pinRourkela, India
-EDUCATION
-IIIT Bhubaneshwar Odisha,India
-Bachelor of Technology in Computer Science and Engineering Post 4th Semester (CGPA: 8.62/10) 2022 - 2026
-ODM Public School Bhubaneswar,Odisha,India
-12th Board 96 % 2020 - 2022
-EXPERIENCE
-Intel Unnati Industrial Training Program May 2024 - June 2024
-•Developed a project that solved real world problems like automatic EDA, pattern and Insights generation
-from structured data fastening process of data analysis,under the guidance of industry experts from intel.
-•Gained hands on experience in AI, LLM, AWS and Machine Learning from industry experts.
-PROJECTS
-Insights Masters
-A web app to help in the task of data analysis
-•Developed a web app that incorporated automatic exploratory data analysis and preprocessing, delivering
-visual charts and generating actionable insights from datasets exceeding 6 million records while
-collaborating with Intel industry experts..
-•Engineered a robust QA bot capable of interpreting complex inquiries from large datasets while producing
-insightful visual representations,powered by Gemini LLM and Langchain library .
-•Deployed backend functionality using AWS services that reduced insights generation time by 50%
-making it secure and reliable for large datasets.
-Under-Water Image Enhancement
-A modified version of famous U-net architecture with DepthWise Convulutional layer and CBAM layers.
-•Pre-processed distorted underwater images to improve visibility and clarity by 39.57 % using WB
-balancing, unsharp masking and CLAHE .
-•Modified U-Net Architecture by using DepthWise Convulutional Layers and CBAM layers. These
-modification reduced the primary model size by 70% and trained with 10,000 images dataset.
-Football player performance analysis
-A fine tuned YOLO model for real time football player performance analysis
-•Implemented transfer learning from a state of art YOLO object detection model and fine-tuned it on
-custom dataset of 600 images.
-•Extracted key metrics like player’s speed,total distance and successful passes with real time tracking of
-players and football.
-TECHNICAL-SKILL
-•Programming Languages: C, C++,Go Lang, Python, JavaScript, Typescript, HTML5
-•Libraries & Frameworks: TensorFlow, Nodejs, Reactjs, Langchain
-•Tools & Technologies: Git, MLFlow, Docker, AWS,Apache, Kafka
-•Databases: MongoDB,PostgreSQL
-HONORS
-Finalist in International Bit N Build Hackathon 2024
-Fr. Conceicao Rodrigues College of Engineering
-Volunteering
-AI-ML Associate 2023 - 2024
-GDSC,IIIT Bhubaneswar
-heloooooooooo """
+  job_description_result = generate_job_description(job_description)
+  resume_result   = generate_resume_details(resume)
+#   return """Tejaswee Kumar Singh
+# /githubtejas122125 | /linkedin-intejaswee-singh
+# /envel⌢petejasweekumarsingh@gmail.com | ♂phone+91 7205147088 | ♂¶ap-pinRourkela, India
+# EDUCATION
+# IIIT Bhubaneshwar Odisha,India
+# Bachelor of Technology in Computer Science and Engineering Post 4th Semester (CGPA: 8.62/10) 2022 - 2026
+# ODM Public School Bhubaneswar,Odisha,India
+# 12th Board 96 % 2020 - 2022
+# EXPERIENCE
+# Intel Unnati Industrial Training Program May 2024 - June 2024
+# •Developed a project that solved real world problems like automatic EDA, pattern and Insights generation
+# from structured data fastening process of data analysis,under the guidance of industry experts from intel.
+# •Gained hands on experience in AI, LLM, AWS and Machine Learning from industry experts.
+# PROJECTS
+# Insights Masters
+# A web app to help in the task of data analysis
+# •Developed a web app that incorporated automatic exploratory data analysis and preprocessing, delivering
+# visual charts and generating actionable insights from datasets exceeding 6 million records while
+# collaborating with Intel industry experts..
+# •Engineered a robust QA bot capable of interpreting complex inquiries from large datasets while producing
+# insightful visual representations,powered by Gemini LLM and Langchain library .
+# •Deployed backend functionality using AWS services that reduced insights generation time by 50%
+# making it secure and reliable for large datasets.
+# Under-Water Image Enhancement
+# A modified version of famous U-net architecture with DepthWise Convulutional layer and CBAM layers.
+# •Pre-processed distorted underwater images to improve visibility and clarity by 39.57 % using WB
+# balancing, unsharp masking and CLAHE .
+# •Modified U-Net Architecture by using DepthWise Convulutional Layers and CBAM layers. These
+# modification reduced the primary model size by 70% and trained with 10,000 images dataset.
+# Football player performance analysis
+# A fine tuned YOLO model for real time football player performance analysis
+# •Implemented transfer learning from a state of art YOLO object detection model and fine-tuned it on
+# custom dataset of 600 images.
+# •Extracted key metrics like player’s speed,total distance and successful passes with real time tracking of
+# players and football.
+# TECHNICAL-SKILL
+# •Programming Languages: C, C++,Go Lang, Python, JavaScript, Typescript, HTML5
+# •Libraries & Frameworks: TensorFlow, Nodejs, Reactjs, Langchain
+# •Tools & Technologies: Git, MLFlow, Docker, AWS,Apache, Kafka
+# •Databases: MongoDB,PostgreSQL
+# HONORS
+# Finalist in International Bit N Build Hackathon 2024
+# Fr. Conceicao Rodrigues College of Engineering
+# Volunteering
+# AI-ML Associate 2023 - 2024
+# GDSC,IIIT Bhubaneswar
+# heloooooooooo """
 
-  # prompt = PromptTemplate.from_template(template_final)
-  # chain_cover_letter = prompt | llm
-  # response = chain_cover_letter.invoke({"job_description_result": job_description_result,"resume_result":resume_result})
-  # return response
+  prompt = PromptTemplate.from_template(template_final)
+  chain_cover_letter = prompt | llm
+  response = chain_cover_letter.invoke({"job_description_result": job_description_result,"resume_result":resume_result})
+  return response

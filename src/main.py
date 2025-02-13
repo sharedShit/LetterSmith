@@ -3,6 +3,7 @@ import streamlit as st
 import time
 from utils import generate_cover_letter_new
 import PyPDF2
+from st_copy_to_clipboard import st_copy_to_clipboard
 
 st.set_page_config(page_title="AI Cover Letter Generator", layout="wide", initial_sidebar_state="collapsed")
 
@@ -79,27 +80,39 @@ if st.session_state.current_page == "upload":
 
 ### ✅ EDIT PAGE (After Cover Letter Generation)
 elif st.session_state.current_page == "edit":
-    st.title("✍️ Edit Your AI-Generated Cover Letter")
+    # st.title("✍️ Edit Your AI-Generated Cover Letter")
+    # Show AI processing message in text area
+    if st.session_state.ai_processing or st.session_state.ai_regenerating:
+        st.session_state.generated_text =  "🤖 AI is refining your cover letter... Please wait." 
+
+            
+    # text_area_content = "🤖 AI is refining your cover letter... Please wait." if st.session_state.ai_processing or st.session_state.ai_regenerating else st.session_state.generated_text
 
     # Copy Button
-    col1, col2 = st.columns([0.7, 0.3])
+    col1, col2 = st.columns([0.2, 0.3])
     with col1:
-        st.subheader("Your AI-Generated Cover Letter")
+        # st.subheader("Copy your AI-Generated Cover Letter")
+         st.markdown("### Copy your AI-Generated Cover Letter")
     with col2:
-        c1,c2 = st.columns([0.2,0.1])
-        with c1:
-            if st.button("📋", help="Copy to clipboard"):
-                st.session_state.copied_text = st.session_state.generated_text
-                st.toast("Text copied successfully!", icon="✅")
-        with c2 :        
-            if st.button("Regenerate Cover Letter", help="Regenerate Cover Letter"):
-                st.session_state.ai_regenerating = True
-                st.rerun()
+        st_copy_to_clipboard(st.session_state.generated_text)
+    st.text_area("", st.session_state.generated_text, height=400)
+        
+        # c1,c2 = st.columns([0.2,0.1])
+    
+        # with c1:
+        #     st_copy_to_clipboard(st.session_state.generated_text)
+            
+        #     # if st.button("📋", help="Copy to clipboard"):
+        #     #     st_copy_to_clipboard(edited_text)
+        #     #     st.session_state.copied_text = st.session_state.generated_text
+        #     #     st.toast("Text copied successfully!", icon="✅")
+        # with c2 :        
+        #     if st.button("Regenerate Cover Letter", help="Regenerate Cover Letter"):
+        #         # st.session_state.generated_text = edited_text 
+        #         st.session_state.ai_regenerating = True
+        #         st.rerun()
 
-    # Show AI processing message in text area
-    text_area_content = "🤖 AI is refining your cover letter... Please wait." if st.session_state.ai_processing else st.session_state.generated_text
-    text_area_content = "🤖 AI is regenerating your cover letter... Please wait." if st.session_state.ai_regenerating else st.session_state.generated_text
-    edited_text = st.text_area("Modify the cover letter as needed:", text_area_content, height=300)
+
 
     # Input + Button in a Single Row
     # col1, col2 = st.columns([0.8, 0.2])
@@ -119,11 +132,14 @@ elif st.session_state.current_page == "edit":
     #     st.rerun()  # Refresh UI
 
 
-    if st.session_state.ai_regenerating:
-        with st.spinner("🤖 AI is regenerating your cover letter... Please wait."):
-            generated_text = generate_cover_letter_new( st.session_state.job_text,st.session_state.resume_text)
-            print("working",st.session_state.resume_text)
-            st.session_state.generated_text = generated_text
-            st.session_state.ai_regenerating = False  # Reset flag
+    # if st.session_state.ai_regenerating:
+    #     with st.spinner("🤖 AI is regenerating your cover letter... Please wait."):
+    #         time.sleep(2)
+    #         generated_text = generate_cover_letter_new( st.session_state.job_text,st.session_state.resume_text)
+    #         print("working",st.session_state.generated_text)
+    #         st.session_state.generated_text = generated_text
+    #         # print("working",st.session_state.generated_text)
             
-        st.rerun()  # Refresh UI
+    #         st.session_state.ai_regenerating = False  # Reset flag
+            
+    #     st.rerun()  # Refresh UI
