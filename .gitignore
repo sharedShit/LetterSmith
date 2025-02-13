@@ -1,0 +1,48 @@
+# Python-specific
+__pycache__/
+*.py[cod]
+*.so
+*.log
+*.sqlite3
+*.db
+
+# Streamlit Cache & Logs
+.streamlit/
+.history/
+logs/
+*.log
+
+# Virtual Environment
+venv/
+.env/
+.venv/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook Checkpoints (if using Jupyter)
+.ipynb_checkpoints/
+
+# MacOS / Linux / Windows system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+
+# VS Code settings (if using VS Code)
+.vscode/
+*.code-workspace
+
+# Ignore large model files (if using AI models)
+models/
+*.h5
+*.pkl
+*.onnx
+*.ckpt
+
+# Ignore node_modules if using npm dependencies
+node_modules/
+
+# Ignore Streamlit Secrets (if storing sensitive credentials)
+.secrets.toml
