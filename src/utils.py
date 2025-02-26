@@ -24,6 +24,7 @@ Please generate a well-structured, detailed, and personalized cover letter that 
 Most Important: Use the job details to frame my skills, experience and my Projects in a way that makes me the perfect candidate.
 Strictly Donot mention any other skill or experience that is not mentioned in my resume.
 Do not write Company Address at the top start from Dear Hiring manager.
+Use Company's name  whereever it is required donot just use "orginization"
 Resonate my experience and skills with the job responsibilities and requirements provided.
 Demonstrate how my background aligns with the company’s needs and how I can add value.
 
