@@ -91,10 +91,10 @@ elif st.session_state.current_page == "edit":
     # Copy Button
     col1, col2 = st.columns([0.2, 0.3])
     with col1:
-        # st.subheader("Copy your AI-Generated Cover Letter")
-         st.markdown("### Copy your AI-Generated Cover Letter")
-    with col2:
-        st_copy_to_clipboard(st.session_state.generated_text)
+        # st.subheader("Your AI-Generated Cover Letter")
+         st.markdown("### Your AI-Generated Cover Letter")
+    # with col2:
+        # st_copy_to_clipboard(st.session_state.generated_text)
     st.text_area("", st.session_state.generated_text, height=400)
         
         # c1,c2 = st.columns([0.2,0.1])

@@ -5,8 +5,6 @@ __pycache__/
 *.log
 *.sqlite3
 *.db
-
-.env
 # Streamlit Cache & Logs
 .streamlit/
 .history/
@@ -15,9 +13,7 @@ logs/
 
 # Virtual Environment
 venv/
-.env/
 .venv/
-env/
 pip-log.txt
 pip-delete-this-directory.txt
 

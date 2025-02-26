@@ -3,13 +3,21 @@ from langchain.schema import AIMessage, HumanMessage
 from langchain_core.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Access environment variables
 api_key = os.getenv("API_KEY")
-llm = GoogleGenerativeAI(model="gemini-pro", google_api_key=api_key)
+# llm = GoogleGenerativeAI(model="models/text-bison-001", google_api_key=api_key)
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-pro",
+    temperature=0.9,
+     google_api_key=api_key
+)
 
 
 template_for_extraction_jd = """This is the Job Description {job_description} extract only relevant information about Required Skills, Responsibilities, Job Title,Company Name
@@ -24,6 +32,7 @@ Please generate a well-structured, detailed, and personalized cover letter that 
 Most Important: Use the job details to frame my skills, experience and my Projects in a way that makes me the perfect candidate.
 Strictly Donot mention any other skill or experience that is not mentioned in my resume.
 Do not write Company Address at the top start from Dear Hiring manager.
+Use Company's name  whereever it is required donot just use "orginization"
 Resonate my experience and skills with the job responsibilities and requirements provided.
 Demonstrate how my background aligns with the company’s needs and how I can add value.
 
@@ -101,4 +110,5 @@ def generate_cover_letter_new(job_description,resume):
   prompt = PromptTemplate.from_template(template_final)
   chain_cover_letter = prompt | llm
   response = chain_cover_letter.invoke({"job_description_result": job_description_result,"resume_result":resume_result})
-  return response
+  print("testing",type(response))
+  return response.content
